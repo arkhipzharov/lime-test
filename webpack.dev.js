@@ -2,8 +2,11 @@ const merge = require('webpack-merge');
 const baseConfig = require('./webpack.common.js');
 module.exports = merge(baseConfig, {
   mode: 'development',
-  watch: true,
   devtool: 'source-map',
+  devServer: {
+    clientLogLevel: 'none',
+    noInfo: true
+  },
   module: {
     rules: [
       {

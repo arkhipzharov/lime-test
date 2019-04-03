@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
@@ -95,15 +94,14 @@ module.exports = {
       }
     }),
     new CopyPlugin([
-      { from: 'src/fonts', to: 'fonts/' },
-      { from: 'src/data', to: 'data/' }
+      { from: 'src/data', to: 'data/' },
+      { from: 'src/fonts', to: 'fonts/' }
     ]),
     new HardSourceWebpackPlugin({
       info: {
         mode: 'none',
         level: 'error'
       }
-    }),
-    new LiveReloadPlugin()
+    })
   ]
 };
