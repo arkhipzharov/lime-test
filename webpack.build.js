@@ -7,6 +7,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminWebp = require('imagemin-webp');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 module.exports = merge(baseConfig, {
   mode: 'production',
   performance: { hints: false },
@@ -78,6 +79,10 @@ module.exports = merge(baseConfig, {
         ]
       },
       exclude: /\.svg$/
-    })
+    }),
+    new CopyPlugin([
+      { from: 'src/data', to: 'data/' },
+      { from: 'src/fonts', to: 'fonts/' }
+    ])
   ]
 });

@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 module.exports = {
   entry: {
@@ -93,10 +92,6 @@ module.exports = {
         class: 'svg-sprite'
       }
     }),
-    new CopyPlugin([
-      { from: 'src/data', to: 'data/' },
-      { from: 'src/fonts', to: 'fonts/' }
-    ]),
     new HardSourceWebpackPlugin({
       info: {
         mode: 'none',

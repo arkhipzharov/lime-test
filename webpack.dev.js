@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.common.js');
+const CopyPlugin = require('copy-webpack-plugin');
 module.exports = merge(baseConfig, {
   mode: 'development',
   devtool: 'source-map',
@@ -42,5 +43,10 @@ module.exports = merge(baseConfig, {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new CopyPlugin([
+      { from: 'src/data', to: 'data/' }
+    ])
+  ]
 });
