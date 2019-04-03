@@ -92,11 +92,6 @@ module.exports = {
         class: 'svg-sprite'
       }
     }),
-    new HardSourceWebpackPlugin({
-      info: {
-        mode: 'none',
-        level: 'error'
-      }
-    })
+    new HardSourceWebpackPlugin()
   ]
 };
