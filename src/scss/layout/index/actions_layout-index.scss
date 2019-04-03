@@ -1,0 +1,73 @@
+.actions {
+  @include vhMedia(2.9vh 0 3vh, padding, (tablet: 15%));
+  @include vhMedia(2.5vh, margin-bottom);
+  background-color: $block-back-col;
+  border: $bord;
+  border-width: 1px 0;
+
+  @media (min-width: $media-pc) {
+    display: grid;
+    padding: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    border: 0;
+    grid-area: actions;
+  }
+
+  > h1 {
+    @include vhMedia(0 3vh, padding, (tablet: 15%));
+    @include vhMedia(3vh, margin-bottom, (tablet: 15%));
+    @include font($size: 3.3vh, $addPerc: (tablet: 15%), $weight: 600);
+
+    @media (min-width: $media-pc) {
+      @include font($size: 22px, $textAlign: left);
+      padding: 23.616px 0 24.6px;
+      margin: 0;
+    }
+  }
+}
+
+.actions-cont-wrap {
+  @include vhMedia(61.7vh, height, (tablet: 15%));
+  position: relative;
+
+  @media (min-width: $media-pc) {
+    height: auto;
+  }
+}
+
+.actions-cont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+
+  @media (min-width: $media-pc) {
+    position: static;
+    height: auto;
+  }
+}
+
+.actions-cont::-webkit-scrollbar {
+  display: none;
+}
+
+.actions-cont-inn {
+  @include vhMedia(184vh, width, (tablet: 15%));
+  @include vhMedia(0 3vh, padding, (tablet: 15%));
+  display: flex;
+  height: 100%;
+
+  @media (min-width: $media-pc) {
+    display: grid;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    grid-gap: 12px;
+    grid: auto / repeat(3, 1fr);
+  }
+
+  @media (min-width: 1195px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

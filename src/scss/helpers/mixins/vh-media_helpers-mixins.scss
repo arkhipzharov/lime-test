@@ -1,0 +1,60 @@
+@function calcValsUsingMediaPercent($vals, $perc, $pc: false) {
+  @for $i from 1 through length($vals) {
+    $val: nth($vals, $i);
+    @if (type-of($val) == 'number' and unit($val) == 'vh') {
+      @if ($pc != true) {
+        $vals: set-nth($vals, $i, $val / 100 * removeUnit($perc));
+      } @else {
+        $vals: set-nth($vals, $i, (984px / 100) * (removeUnit($val) / 100 * removeUnit($perc)));
+      }
+    }
+  }
+  @return $vals;
+}
+
+$media-percents: (mobile-narrow: 80%, tablet: 60%, pc: 65%);
+
+@mixin vhMedia(
+  $vals,
+  $prop: height,
+  $addPerc: null,
+  $sidebarStretch: false
+) {
+  @include vh($vals, $prop, $sidebarStretch);
+
+  $vals1: null;
+
+  @if (type-of($addPerc) == 'map' and map-has-key($addPerc, 'mobile-narrow')) {
+    $vals1: calcValsUsingMediaPercent($vals, map-get($media-percents, 'mobile-narrow') + map-get($addPerc, 'mobile-narrow'));
+  } @else {
+    $vals1: calcValsUsingMediaPercent($vals, map-get($media-percents, 'mobile-narrow'));
+  }
+
+  @media (max-aspect-ratio: $media-mobile-narrow) {
+    @include vh($vals1, $prop, $sidebarStretch);
+  }
+
+  $vals2: null;
+  
+  @if (type-of($addPerc) == 'map' and map-has-key($addPerc, 'tablet')) {
+    $vals2: calcValsUsingMediaPercent($vals, map-get($media-percents, 'tablet') + map-get($addPerc, 'tablet'));
+  } @else {
+    $vals2: calcValsUsingMediaPercent($vals, map-get($media-percents, 'tablet'));
+  }
+
+  @media (min-width: $media-tablet) {
+    @include vh($vals2, $prop, $sidebarStretch);
+  }
+
+  $vals3: null;
+  
+  @if (type-of($addPerc) == 'map' and map-has-key($addPerc, 'pc')) {
+    $vals3: calcValsUsingMediaPercent($vals, map-get($media-percents, 'pc') + map-get($addPerc, 'pc'), true);
+  } @else {
+    $vals3: calcValsUsingMediaPercent($vals, map-get($media-percents, 'pc'), true);
+  }
+
+  @media (min-width: $media-pc) {
+    @include vh($vals3, $prop, $sidebarStretch, true);
+  }
+}

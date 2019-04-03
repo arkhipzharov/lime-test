@@ -1,0 +1,6 @@
+@mixin layout-media-pc {
+  @media (min-width: $media-pc) {
+    max-width: $max-layout-width;
+    padding: 0 20px;
+  }
+}

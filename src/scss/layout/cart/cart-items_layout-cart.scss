@@ -1,0 +1,9 @@
+.cart-items {
+  @media (min-width: $media-pc) {
+    flex: 2.5 1 0;
+    margin-right: 20px;
+    overflow: hidden;
+    border: $bord;
+    border-radius: 5px;
+  }
+}

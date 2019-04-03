@@ -1,0 +1,23 @@
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "extends": [
+    "stylelint-config-sass-guidelines"
+  ],
+  "ignoreFiles": [
+    "src/scss/base/reset_base.scss",
+    "src/scss/helpers/mixins/*.scss",
+    "dist/css/*.css"
+  ],
+  "rules": {
+    "order/order": null,
+    "order/properties-order": null,
+    "order/properties-alphabetical-order": null,
+    "color-hex-case": "upper",
+    "scss/at-mixin-pattern": null,
+    "scss/at-function-pattern": null,
+    "function-parentheses-space-inside": null,
+    "selector-no-qualifying-type": null
+  }
+}

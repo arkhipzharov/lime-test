@@ -1,0 +1,12 @@
+.container {
+  flex-direction: column;
+  display: flex;
+  margin-bottom: 0;
+  
+  @media (min-width: $media-pc) {
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

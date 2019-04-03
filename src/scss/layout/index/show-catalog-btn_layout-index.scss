@@ -1,0 +1,45 @@
+.show-catalog-btn {
+  @include hide-on-pc;
+  @include vhMedia(0 4vh, padding);
+  @include vhMedia(2.5vh, margin-bottom);
+  @include vhMedia(17.5vh);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  background-color: $block-back-col-orange;
+  border-bottom: $bord;
+
+  > svg {
+    fill: $text-col-x-light;
+  }
+
+  > svg:first-child {
+    @include vhMedia(4.5vh);
+  }
+
+  > svg:last-child {
+    @include vhMedia(2.7vh);
+    margin-left: auto;
+  }
+}
+
+.show-catalog-btn-text {
+  @include vhMedia(2vh, margin-left);
+  align-items: flex-start;
+  flex-flow: column;
+  display: flex;
+}
+
+.show-catalog-btn-text > span {
+  color: $text-col-x-light;
+}
+
+.show-catalog-btn-text > span:first-child {
+  @include font($size: 3.7vh, $weight: 600);
+  @include vhMedia(1vh, margin-bottom);
+}
+
+.show-catalog-btn-text > span:last-child {
+  @include font(2vh);
+}

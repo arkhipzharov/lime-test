@@ -1,0 +1,98 @@
+.total {
+  @include vhMedia(3vh, padding, (tablet: 40%));
+  flex: 1 1 0;
+  background-color: $block-back-col;
+
+  @media (min-width: $media-tablet) {
+    align-items: center;
+    display: flex;
+  }
+
+  @media (min-width: $media-pc) {
+    flex: 1 1 0;
+    display: block;
+    border: $bord;
+    border-radius: 5px;
+  }
+}
+
+.total-price {
+  @include vhMedia(3vh, margin-bottom);
+  
+  @media (min-width: $media-tablet) {
+    @include vh(16vh, width);
+    order: 1;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $media-pc) {
+    margin-bottom: 20px;
+  }
+
+  > span {
+    @include vhMedia(1.5vh, margin-bottom);
+    @include font(2.5vh);
+    display: block;
+  }
+}
+
+.total-price-cont {
+  display: flex;
+
+  > span {
+    @include vhMedia(0.7vh, margin-right);
+    @include font(
+      $size: 4.4vh,
+      $lineHeight: 3.6vh,
+      $weight: 600
+    );
+    display: block;
+  }
+
+  > svg {
+    @include vhMedia(3.2vh);
+    align-self: flex-end;
+  }
+}
+
+%total-btns {
+  @include vhMedia(2.3vh 7vh 2.5vh 7vh, padding);
+  @include vhMedia(0.7vh, border-radius);
+  display: block;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  border: $bord;
+  cursor: pointer;
+}
+
+.make-order-btn {
+  @extend %total-btns;
+  color: $text-col-x-light;
+  background-color: $block-back-col-orange;
+  border-color: $orange;
+
+  @media (min-width: $media-tablet) {
+    flex: 1 0 0;
+  }
+
+  @media (min-width: $media-pc) {
+    margin: 0 0 10px;
+  }
+}
+
+.clear-cart-btn {
+  @extend %total-btns;
+  @include vhMedia(1.5vh, margin-top);
+  background-color: $block-back-col;
+
+  @media (min-width: $media-tablet) {
+    @include vh(0 3vh 0 2vh, margin);
+    width: auto;
+  }
+
+  @media (min-width: $media-pc) {
+    width: 100%;
+    margin: 0;
+  }
+}

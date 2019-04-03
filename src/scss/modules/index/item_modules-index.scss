@@ -1,0 +1,190 @@
+$block: shop;
+
+.item {
+  @include vhMedia(1.5vh 2vh 2vh 2vh, padding);
+  @include vhMedia(
+    'header header header' auto
+    '. . .' 2vh
+    'block block block' 12vh
+    'block block block' 1fr
+    '. . .' 2vh
+    'btns btns btns' auto,
+    grid
+  );
+  @include vhMedia(20vh 6vh 1fr, grid-template-columns);
+  display: grid;
+  background-color: $block-back-col;
+  border-top: $bord;
+
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: $bord;
+  }
+
+  @media (min-width: $media-tablet) {
+    @include vh(1.7vh 2vh, padding);
+    @include vh(
+      'block . header . btns' auto
+      'block . . . btns' 1vh
+      'block . price . btns' 1fr,
+      grid
+    );
+    @include vh(
+      auto 1.5vh 1fr 4vh auto,
+      grid-template-columns
+    );
+  }
+
+  @media (min-width: $media-pc) {
+    padding: 12px;
+    margin-bottom: 0;
+    border: $bord;
+    border-radius: 5px;
+    grid: 
+      'block' 55%
+      'block' 1fr
+      '.' 14.76px
+      'price' auto
+      '.' 18.696px
+      'btns' auto
+      / 1fr;
+  } 
+}
+
+.item-inn-block {
+  @include vhMedia(
+    'img . rating' 7vh
+    'img . .' 1fr,
+    grid
+  );
+  @include vhMedia(auto 6vh 1fr, grid-template-columns);
+  display: grid;
+  grid-area: block;
+
+  @media (min-width: $media-tablet) {
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+  }
+}
+
+.item-header {
+  @include font($lineHeight: 2.9vh);
+  grid-area: header;
+
+  @media (min-width: $media-pc) {
+    align-self: start;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+}
+
+.item-img {
+  @include vhMedia(20vh);
+  @include vhMedia(20vh, width);
+  display: block;
+  grid-area: img;
+
+  @media (min-width: $media-tablet) {
+    @include vh(1vh, margin-bottom);
+    @include vh(11vh);
+    @include vh(11vh, width);
+  }
+
+  @media (min-width: $media-pc) {
+    width: 100%;
+    height: 70%;
+  }
+
+  > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.item-rating {
+  align-self: end;
+  grid-area: rating;
+
+  @media (min-width: $media-tablet) {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }
+
+  @media (min-width: $media-pc) {
+    justify-content: flex-start;
+  }
+
+  > svg {    
+    @include vhMedia(2.7vh);
+    fill: #F3AE01;
+  }
+}
+
+.item-price {
+  align-self: start;
+  display: flex;
+  grid-row: 4 / 5;
+  grid-column: 3 / 4;
+
+  @media (min-width: $media-tablet) {
+    grid-row: none;
+    grid-column: none;
+    grid-area: price;
+  }
+
+  > span {
+    @include font(
+      $size: 4.4vh,
+      $lineHeight: 3.6vh,
+      $weight: 600,
+      $addPerc: (tablet: -10%)
+    );
+    @include vhMedia(0.7vh, margin-right, (tablet: -10%));
+  }
+
+  > svg {
+    @include vhMedia(3.2vh, height, (tablet: -10%));
+    align-self: flex-end;
+  }
+}
+
+.item-btns {
+  grid-area: btns;
+}
+
+.item-buy-btn {
+  @include vhMedia(1.8vh 1vh, padding);
+  @include vhMedia(20vh, width, (tablet: 20%, pc: 10%));
+  @include vhMedia(0.7vh, border-radius);
+  justify-content: center;
+  display: flex;
+  background-color: $block-back-col-orange;
+
+  @media (min-width: $media-tablet) {
+    @include vh(1vh 2vh, padding);
+  }
+  
+  @media (min-width: $media-pc) {
+    padding: 12px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  > svg {
+    @include vhMedia(2.2vh);
+    fill: $text-col-x-light;
+  }
+
+  > span {
+    @include font(
+      $color: $text-col-x-light,
+      $lineHeight: 2.15vh
+    );
+    @include vhMedia(0.8vh, margin-left);
+    align-self: flex-start;
+  }
+}

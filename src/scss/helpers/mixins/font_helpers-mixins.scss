@@ -1,0 +1,59 @@
+@mixin font(
+  $size: false,
+  $color: false,
+  $lineHeight: false,
+  $weight: false,
+  $textAlign: false,
+  $textDecoration: false,
+  $family: false,
+  $whiteSpace: false,
+  $addPerc: false
+) {
+  @if ($size != false) {
+    @if (unit($size) == 'px') {
+      font-size: $size;
+    } @else {
+      @if ($addPerc != false) {
+        @include vhMedia($size, font-size, $addPerc);
+      } @else {
+        @include vhMedia($size, font-size);
+      }
+    }
+  } 
+
+  @if ($color != false) {
+    color: $color;
+  } 
+
+  @if ($lineHeight != false) {
+    @if (unit($lineHeight) == 'px') {
+      line-height: $lineHeight;
+    } @else {
+      @if ($addPerc != false) {
+        @include vhMedia($lineHeight, line-height, $addPerc);
+      } @else {
+        @include vhMedia($lineHeight, line-height);
+      }
+    }
+  }
+
+  @if ($weight != false) {
+    font-weight: $weight;
+  }
+
+  @if ($textAlign != false) {
+    text-align: $textAlign;
+  }
+
+  @if ($textDecoration != false) {
+    text-decoration: $textDecoration;
+  }
+
+  @if ($family != false) {
+    font-family: $family;
+  }
+
+  @if ($whiteSpace != false) {
+    white-space: $whiteSpace;
+  }
+}

@@ -1,0 +1,46 @@
+.empty-cart {
+  @include vhMedia(6vh 2.5vh, padding);
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: $block-back-col;
+  border-width: 1px 0;
+
+  @media (min-width: $media-pc) {
+    border: $bord;
+    border-width: 1px;
+    border-radius: 5px;    
+  }
+
+  > svg {
+    @include vhMedia(11vh);
+    @include vhMedia(1.5vh, margin-bottom);
+    width: 100%;
+    fill: currentColor;
+  }
+
+  > h1 {
+    @include font(
+      $size: 3vh,
+      $weight: 600,
+      $textAlign: center
+    );
+    @include vhMedia(4vh,  margin-bottom);
+  }
+}
+
+.empty-cart-go-to-catalog-text {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  @include font(
+    $lineHeight: 3.5vh,
+    $textAlign: center
+  );
+
+  @media (min-width: $media-pc) {
+    display: block;
+  }
+}
