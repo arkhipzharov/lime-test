@@ -33,12 +33,16 @@
     </div>
 
 	<div class="cart-items">
-	  <div class="cart-item"><div>
-	  <div class="cart-item"><div>
+	  <div class="cart-item">
+        ...
+	  <div>
+	  <div class="cart-item">
+        ...
+	  <div>
     </div>
 
 	<div class="total">
-      <span class="price">Итого:</span>
+      <span class="price">Итого: 12000</span>
       <button class="make-order-btn">
         Оформить заказ
       </button>
@@ -69,7 +73,9 @@
     ```html
 	<div class="items">
       <h1>Лучшие предложения</h1>
-      <div class="items-cont"></div>
+      <div class="items-cont">
+	    ...
+	  </div>
     </div>
 
     <div class="actions">
@@ -126,7 +132,7 @@
        <svg>
          <use href="#arrow-right"></use>
        </svg>
-       <a class="header-and-link-link-mask"></a>
+       <a class="link-mask"></a>
      </h1>
      ```
 6. Если элемент содержит невзаимосвязанные элементы, находясь на одном уровне с другими невзаимосвязанными элементами, и **вы были вынуждены добавить его в разметку, так как иначе макет был бы неисправным**, то давайте имя cont. Для лучшего понимания ассоциируйте это с тем, что cont это **новый контейнер** для множества игрушек из **разных** материалов, в отличие от уже имеющихся у вас **контейнеров, например, только для мягких** игрушек (описано в пункте 4), а также купленный, потому что игрушки были разбросаны, что **было проблемой**. Также этот контейнер **стоит среди игрушек**, находящихся на своем месте
@@ -419,6 +425,6 @@
   
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTUyOTczMDk3LC0xNzMwNDA5MjYwLDU0MD
-c0NzE5NV19
+eyJoaXN0b3J5IjpbMTE3MDYyMzYzMSwtMTczMDQwOTI2MCw1ND
+A3NDcxOTVdfQ==
 -->
