@@ -1,0 +1,7 @@
+@function removeUnit($val) {
+  @if (type-of($val) == 'number' and not unitless($val)) {
+    $val: $val / ($val * 0 + 1);
+  }
+
+  @return $val;
+}

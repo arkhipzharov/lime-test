@@ -1,0 +1,21 @@
+@function calcValsUsingMediaQuerySizeDiffPercComparedToMobile(
+  $vals, $perc, $convertVhToPx: null
+) {
+  @for $i from 1 through length($vals) {
+    $val: nth($vals, $i);
+
+    @if (type-of($val) == 'number' and unit($val) == 'vh') {
+      @if (not $convertVhToPx) {
+        $vals: set-nth($vals, $i, $val / 100 * removeUnit($perc));
+      } @else {
+        $vals: set-nth(
+          $vals,
+          $i,
+          (984px / 100) * (removeUnit($val) / 100 * removeUnit($perc))
+        );
+      }
+    }
+  }
+  
+  @return $vals;
+}

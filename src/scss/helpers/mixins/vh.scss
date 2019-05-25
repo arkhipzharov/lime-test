@@ -1,0 +1,50 @@
+/* 1
+  Данный фикс применяется, чтобы при появлении и исчезновении динамической
+  адресной строки на мобильных макет не менял своего размера из-за природы vh
+*/
+@function replaceVhValsWithFix($vals) {
+  @for $i from 1 through length($vals) {
+    $val: nth($vals, $i);
+
+    @if (type-of($val) == 'number' and unit($val) == 'vh') {
+      $vals: set-nth($vals, $i, calc(var(--vh, 1vh) * #{removeUnit($val)}));
+    }
+  }
+
+  @return $vals;
+}
+
+@mixin vh($vals, $prop: 'height', $tablet: null, $vhConvertedToPx: null) {
+  #{$prop}: $vals;
+  /*
+    Если этот миксин используется из миксина vhMedia, в котором
+    значения vh были конвертированы в пиксели для использования
+    на пк, то значения остаются такими как есть, так как фикс нужен
+    только для vh
+  */
+  @if (not $vhConvertedToPx) {
+    #{$prop}: replaceVhValsWithFix($vals);    
+    /*
+      Если миксин использовался в медиа запросе для планшета, то он
+      переопределял стили на пк и они использовали vh и размеры для планшета,
+      а должны были использовать пиксели и размеры для пк
+    */
+    @if ($tablet) {
+      $vals: calcValsUsingMediaQuerySizeDiffPercComparedToMobile(
+        $vals,
+        100%
+        + (
+          map-get($media-query-size-diff-percents-compared-to-mobile, 'pc')
+          - map-get(
+            $media-query-size-diff-percents-compared-to-mobile, 'tablet'
+          )
+        ),
+        true
+      );
+      
+      @media (min-width: $media-pc) {
+        #{$prop}: $vals;
+      }
+    }
+  }
+}

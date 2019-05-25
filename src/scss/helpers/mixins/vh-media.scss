@@ -1,0 +1,97 @@
+/* 1
+  Смотреть код под комментарием 1 в файле с переменными sass
+
+  Если там требуется изменить какие-то проценты для использования в
+  текущем вызове миксина, то надо передать в параметр
+  $changeMediaQuerySizeDiffPercComparedToMobileOn map, увеличивающий или
+  уменьшающий процент на выбранных устройствах, возможно и не на всех.
+
+  Пример:
+
+  (tablet: -15%, pc: 10%)
+*/ 
+@mixin vhMedia(
+  $vals,
+  $prop: height,
+  $changeMediaQuerySizeDiffPercComparedToMobileOn: null
+) {
+  $vals1: null;
+
+  @if (
+    type-of($changeMediaQuerySizeDiffPercComparedToMobileOn) == 'map'
+    and map-has-key(
+      $changeMediaQuerySizeDiffPercComparedToMobileOn, 'mobile-narrow'
+    )
+  ) {
+    $vals1: calcValsUsingMediaQuerySizeDiffPercComparedToMobile(
+      $vals,
+      map-get(
+        $media-query-size-diff-percents-compared-to-mobile, 'mobile-narrow'
+      )
+      + map-get(
+        $changeMediaQuerySizeDiffPercComparedToMobileOn, 'mobile-narrow'
+      )
+    );
+  } @else {
+    $vals1: calcValsUsingMediaQuerySizeDiffPercComparedToMobile(
+      $vals, map-get(
+        $media-query-size-diff-percents-compared-to-mobile, 'mobile-narrow'
+      )
+    );
+  }
+
+  @media (max-aspect-ratio: $media-mobile-narrow) {
+    @include vh($vals1, $prop);
+  }
+
+  @include vh($vals, $prop);
+
+  $vals2: null;
+  
+  @if (
+    type-of($changeMediaQuerySizeDiffPercComparedToMobileOn) == 'map'
+    and map-has-key(
+      $changeMediaQuerySizeDiffPercComparedToMobileOn, 'tablet'
+    )
+  ) {
+    $vals2: calcValsUsingMediaQuerySizeDiffPercComparedToMobile(
+      $vals,
+      map-get($media-query-size-diff-percents-compared-to-mobile, 'tablet')
+      + map-get($changeMediaQuerySizeDiffPercComparedToMobileOn, 'tablet')
+    );
+  } @else {
+    $vals2: calcValsUsingMediaQuerySizeDiffPercComparedToMobile(
+      $vals, map-get(
+        $media-query-size-diff-percents-compared-to-mobile, 'tablet'
+      )
+    );
+  }
+
+  @media (min-width: $media-tablet) {
+    @include vh($vals2, $prop);
+  }
+
+  $vals3: null;
+  
+  @if (
+    type-of($changeMediaQuerySizeDiffPercComparedToMobileOn) == 'map'
+    and map-has-key($changeMediaQuerySizeDiffPercComparedToMobileOn, 'pc')
+  ) {
+    $vals3: calcValsUsingMediaQuerySizeDiffPercComparedToMobile(
+      $vals,
+      map-get($media-query-size-diff-percents-compared-to-mobile, 'pc')
+      + map-get($changeMediaQuerySizeDiffPercComparedToMobileOn, 'pc'),
+      true
+    );
+  } @else {
+    $vals3: calcValsUsingMediaQuerySizeDiffPercComparedToMobile(
+      $vals,
+      map-get($media-query-size-diff-percents-compared-to-mobile, 'pc'),
+      true
+    );
+  }
+
+  @media (min-width: $media-pc) {
+    @include vh($vals: $vals3, $prop: $prop, $vhConvertedToPx: true);
+  }
+}

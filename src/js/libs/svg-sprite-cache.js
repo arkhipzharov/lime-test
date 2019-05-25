@@ -1,7 +1,8 @@
+// Кэширует svg спрайт в localStorage
 ;(function(window, document){
     'use strict';
     var file     = 'sprite.svg',
-        revision = 2.7;
+        revision = 3.2;
     if(!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
         return true;
  

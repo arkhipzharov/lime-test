@@ -22,20 +22,30 @@ time, mark, audio, video, button, input {
   outline: none;
 }
 
-input {
-  border: 0;
-}
-
-button {
-  background-color: inherit;
-}
-
 a {
   text-decoration: none;
 }
 
 svg {
   fill: currentColor;
+}
+
+button {
+  // Это свойство не помещено в блок, где больше всего селекторов,
+  // потому что случай является исключением 
+  background-color: inherit;
+}
+
+// Убирает стрелки у input типа number 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+// Это тоже убирает стрелки 
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 ::placeholder {

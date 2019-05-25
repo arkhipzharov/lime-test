@@ -1,0 +1,84 @@
+// Палитра цветов проекта
+
+$white-light: #FFF;
+$white: #E5E5E5;
+$white-dark: #C7C4C1;
+$white-x-dark: #B9B4AD;
+
+$grey-blue: #303D4F;
+$grey-xx-light: #535455;
+$grey-x-light: #363636;
+$grey-light: #232429;
+$grey: #1A1B1F;
+$grey-dark: #17181C;
+
+$black: #000;
+
+$orange: #BB5603;
+$orange-light: #F5AD42;
+
+$purple: #7D1391;
+
+$blue: #4AC5DA;
+
+/*
+  Часто используемые переменные для конечного применения, содержащие
+  частично или полностью цвета, взятые из переменных основной палитры.
+  Такой подход позволяет не менять название переменной в самом коде,
+  если нужно изменить цвет при его подборе
+*/
+
+$text-col-x-light: $white-light;
+$text-col-light: $white;
+$text-col: $white-dark;
+$text-col-dark: $white-x-dark;
+$text-col-blue: $blue;
+
+$block-back-col: $grey-dark;
+$block-back-col-light: $grey;
+$block-back-col-blue: $grey-blue;
+$block-back-col-orange: $orange;
+$block-back-col-purple: $purple;
+
+$bord: 1px solid $grey-x-light;
+$bord-light: 1px solid $grey-xx-light;
+$bord-x-light: 1px solid $white-x-dark;
+
+// Такие же, как и в прошлой сецкии, но малоиспользуемые
+
+$icon-col: $white-x-dark;
+
+$popup-mask-back-col: $black;
+
+$logo-col-mobile-tablet: $orange-light;
+
+// Связанные со шрифтами
+
+$font-fam-fallback: Arimo, Arial, sans-serif;
+
+$font-fam-pt-sans: 'PT Sans', $font-fam-fallback;
+$font-fam-roboto: Roboto, $font-fam-fallback;
+
+// Связанные с медиа запросами и разметкой, зависимой от них
+
+/* 1
+  При одних и тех же размерах в единицах vh на каких-то устройствах
+  макет может выглядеть неправильно. Например, на телефоне блок товара
+  может занимать 1/3 экрана для лучшей видимости, но на планшете он будет
+  слишком большим. Для того, чтобы это исправить, здесь определено, сколько
+  по размеру составляет отличие макета на различных устройствах от макета
+  на телефоне, поскольку используется подход mobile first. В дальнейшем
+  эти проценты будут использоваться в миксинах, отвечающих за
+  медиа запросы, занимающиеся единицами vh
+*/
+$media-query-size-diff-percents-compared-to-mobile: (
+  mobile-narrow: 80%,
+  tablet: 60%,
+  pc: 65%
+);
+
+$media-mobile-narrow: '9/17';
+$media-tablet: 768px;
+$media-pc: 992px;
+
+$max-layout-width: 1250px;

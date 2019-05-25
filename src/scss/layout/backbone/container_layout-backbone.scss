@@ -1,9 +1,0 @@
-.container {
-  @include vhMedia(2.5vh, margin-bottom);
-  @include layout-media-pc;
-  flex: 1 0 auto;
-
-  @media (min-width: $media-pc) {
-    margin: 20px auto;
-  }
-}

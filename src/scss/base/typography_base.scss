@@ -3,8 +3,8 @@
   font-style: normal;
   font-weight: 400;
   src: local('PT Sans'), local('PTSans-Regular'),
-    url('../../fonts/pt-sans-v9-cyrillic-regular.woff2') format('woff2'),
-    url('../../fonts/pt-sans-v9-cyrillic-regular.woff') format('woff');
+    url('~@/fonts/pt-sans.woff2') format('woff2'),
+    url('~@/fonts/pt-sans.woff') format('woff');
 }
 
 @font-face {
@@ -12,6 +12,6 @@
   font-style: normal;
   font-weight: 100;
   src: local('Roboto Thin'), local('Roboto-Thin'),
-    url('../../fonts/roboto-v18-latin-100.woff2') format('woff2'),
-    url('../../fonts/roboto-v18-latin-100.woff') format('woff');
+    url('~@/fonts/roboto.woff2') format('woff2'),
+    url('~@/fonts/roboto.woff') format('woff');
 }

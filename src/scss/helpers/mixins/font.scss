@@ -1,0 +1,67 @@
+/*
+  Имя параметра $changePercOn могло быть таким же, как описано в комментарии 1
+  в файле миксина vhMedia, но его имя часто используется при вызове этого
+  миксина, поэтому оно укорочено. Принимает он то же значение, что и параметр,
+  описанный в том комментарии
+*/
+@mixin font(
+  $size: null,
+  $color: null,
+  $lineHeight: null,
+  $weight: null,
+  $textAlign: null,
+  $textDecoration: null,
+  $family: null,
+  $whiteSpace: null,
+  $changePercOn: null
+) {
+  @if ($size) {
+    @if (unit($size) == 'px') {
+      font-size: $size;
+    } @else {
+      @if ($changePercOn) {
+        @include vhMedia($size, font-size, $changePercOn);
+      } @else {
+        @include vhMedia($size, font-size);
+      }
+    }
+  } 
+
+  @if ($color) {
+    color: $color;
+  } 
+
+  @if ($lineHeight) {
+    @if (unit($lineHeight) == 'px') {
+      line-height: $lineHeight;
+    } @else {
+      @if ($changePercOn) {
+        @include vhMedia($lineHeight, line-height, $changePercOn);
+      } @else {
+        @include vhMedia($lineHeight, line-height);
+      }
+    }
+  }
+
+  @if ($weight) {
+    @if (typeof $weight == 'number') {
+      font-weight: $weight;
+    }
+  }
+
+  @if ($textAlign) {
+    text-align: $textAlign;
+  }
+
+  @if ($textDecoration) {
+    text-decoration: $textDecoration;
+  }
+
+  @if ($family) {
+    font-family: $family;
+  }
+
+  @if ($whiteSpace) {
+    white-space: $whiteSpace;
+  }
+}

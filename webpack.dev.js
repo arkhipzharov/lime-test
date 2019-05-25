@@ -1,52 +1,56 @@
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.common.js');
-const CopyPlugin = require('copy-webpack-plugin');
+
 module.exports = merge(baseConfig, {
-  mode: 'development',
-  devtool: 'source-map',
   devServer: {
+      // При запланированном прерывании подключения в консоли браузера
+      // показывалось нежелательное уведомление
     clientLogLevel: 'none',
-    noInfo: true
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: 'style-loader'
-          },
+          'vue-style-loader',
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
-            }
+              importLoaders: 1,
+            },
           },
+          'fast-sass-loader',
           {
-            loader: 'postcss-loader'
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                './src/scss/helpers/variables.scss',
+                './src/scss/helpers/functions/*.scss',
+                './src/scss/helpers/mixins/*.scss',
+              ],
+            },
           },
-          {
-            loader: 'fast-sass-loader'
-          }
-        ]
+        ],
       },
       {
-        test: /\.(png|jpe?g|webp)$/,
+        test: /\.(jpg|webp)$/,
+        use: 'file-loader',
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        use: 'file-loader',
+      },
+      {
+        test: /\.svg$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'svg-sprite-loader',
             options: {
-              context: 'src/',
-              name: '[path][name].[ext]'
-            }
-          }
-        ]
-      }
-    ]
+              extract: true,
+            },
+          },
+        ],
+      },
+    ],
   },
-  plugins: [
-    new CopyPlugin([
-      { from: 'src/data', to: 'data/' }
-    ])
-  ]
 });

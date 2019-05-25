@@ -1,16 +1,25 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+
 module.exports = {
-  entry: {
-    index: ['./src/js/index.js', './src/scss/index.scss'],
-    cart: ['./src/js/cart.js', './src/scss/cart.scss']
-  },
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js'
+    filename: 'main.js',
+  },
+  resolve: {
+    alias: {
+      // Для работоспособности v-runtime-template
+      vue$: 'vue/dist/vue.common',
+      /*
+        import '@/path/file.ext';
+
+        вместо import '../../../src/path/file.ext';
+      */
+      '@': path.resolve(__dirname, 'src/'),
+    },
   },
   module: {
     rules: [
@@ -21,77 +30,62 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
+              // import('./file.ext');
+              plugins: [
+                '@babel/plugin-syntax-dynamic-import',
+              ],
               presets: [
                 [
                   '@babel/preset-env',
                   {
-                    useBuiltIns: 'entry'
-                  }
-                ]
-              ]
-            }
-          }
-        ]
+                    useBuiltIns: 'entry',
+                    /* 1
+                      Теперь надо указывать версию corejs, подробнее:
+
+                      https://github.com/zloirock/core-js/blob/master/docs/2019-03-19-core-js-3-babel-and-a-look-into-the-future.md
+                    */
+                    corejs: 3,
+                  },
+                ],
+              ],
+            },
+          },
+        ],
       },
       {
-        test: /\.html$/,
-        use: [
-          { 
-            loader: 'html-srcsets-loader',
-            options: {
-              attrs: ['img:src', 'source:srcset', 'img:srcset']
-            }
-          }
-        ]
+        test: /\.vue$/,
+        use: {
+          loader: 'vue-loader',
+          options: {
+            compilerOptions: {
+              /*
+                <span>
+                  Многострочный текст
+                </span>
+                =>
+                <span> Многострочный текст</span>
+
+                Появлялся нежелательный пробел в начале текста
+              */
+              whitespace: 'condense',
+            },
+          },
+        },
       },
-      {
-        test: /\.(woff|woff2|eot|ttf)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              context: 'src/',
-              name: '[path][name].[ext]'
-            }
-          }
-        ]
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'svg-sprite-loader',
-            options: {
-              extract: true
-            }
-          }
-        ]
-      }
-    ]
+    ],
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      backbone: ['./backbone/backbone.js', 'default']
-    }),
     new HtmlWebpackPlugin({
-      inject: 'head',
-      filename: 'index.html',
       template: 'src/index.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      inject: 'head',
-      filename: 'cart.html',
-      template: 'src/cart.html',
-      chunks: ['cart']
     }),
     new SpriteLoaderPlugin({
+        // Упрощенная версия svg спрайта в бандле
       plainSprite: true,
       spriteAttrs: {
-        style: 'display: none',
-        class: 'svg-sprite'
-      }
+          // Svg спрайт занимал много места в макете и ломал его
+        style: 'display: none;',
+      },
     }),
-    new HardSourceWebpackPlugin()
-  ]
+    new VueLoaderPlugin(),
+  ],
 };

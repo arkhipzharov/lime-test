@@ -1,2 +1,2 @@
-dist/js/*.js
+dist/*.js
 src/js/libs/*.js
