@@ -65,7 +65,7 @@
       </div>
     </div>
     ```
-4. Если элемент, вложенный в элемент, описанный в пункте 2, по сути должен иметь такое же имя, то добавляйте постфикс cont для избежания конфликта 
+4. Если элемент, вложенный в элемент, описанный в пункте 2, по сути должен иметь такое же имя, то добавляйте постфикс cont для избежания конфликта
     ```html
 	<div class="items">
       <h1>Лучшие предложения</h1>
@@ -77,8 +77,8 @@
       <div class="actions-cont-wrap-wrap">
         <div class="actions-cont-wrap">
           <div class="actions-cont">
-	        ...
-		  </div>
+            ...
+          </div>
         </div>
       </div>
     </div>
@@ -103,9 +103,9 @@
         </a>
         <!--
           Этот элемент содержит описание новости
-		  и при этом имеет градиент в качестве
-		  фона, который накладывается поверх
-		  изображения новости
+          и при этом имеет градиент в качестве
+          фона, который накладывается поверх
+          изображения новости
 	    -->
         <a class="descr-and-gradient-mask">
           Lorem ipsum dolor
@@ -134,11 +134,11 @@
 	<div class="item">
       <div class="cont">
         <a class="img">
-	      ...
-		</a>
+          ...
+        </a>
         <div class="rating">
-		  ...
-		</div>
+          ...
+        </div>
       </div>
       <p class="description">Lorem ipsum</p>
       <span class="price">5000</span>
@@ -171,8 +171,8 @@
     </footer>
     ```
 7. Если элемент должен лишь накладываться поверх другого элемента, то добавляйте постфикс mask
-     ```html
-	 <div class="review">
+    ```html
+	<div class="review">
        <div class="cont">
          ...
        </div>
@@ -188,7 +188,7 @@
 	   --> 
        <a class="link-mask"></a>
      </div>
-     ```
+    ```
 ## Именование переменных
 8. Если переменная содержит цифру, то имя должно это обозначить, возможно используя постфикс
 
@@ -315,13 +315,13 @@
     Пример для SFC `TheItems.vue`, служащего контейнером для повторяющегося SFC `RptCartItem.vue`
     - Эта функция отвечает за загрузку дополнителных данных и отображение товаров, представленных в виде SFC RptItem.vue на их основе в дальнейшем, а значит она не относится непосредственно к SFC `TheItems.vue`
  
-      ```javascript
-      // Плохо
-      showMore() {...}
+         ```javascript
+       // Плохо
+       showMore() {...}
 
-	  // Хорошо
-	  showMoreItems() {...}
-      ```
+	   // Хорошо
+	   showMoreItems() {...}
+       ```
 15. Если функция это метод, то имя должно обозначать действие
     ```javascript
     methods: { addToCart() {...} }
@@ -419,6 +419,6 @@
   
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDgxMTU2MDksLTE3MzA0MDkyNjAsNT
-QwNzQ3MTk1XX0=
+eyJoaXN0b3J5IjpbOTUyOTczMDk3LC0xNzMwNDA5MjYwLDU0MD
+c0NzE5NV19
 -->
