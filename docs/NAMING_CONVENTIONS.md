@@ -102,11 +102,11 @@
           <img src="img.jpg">
         </a>
         <!--
-		  Этот элемент содержит описание новости
+          Этот элемент содержит описание новости
 		  и при этом имеет градиент в качестве
 		  фона, который накладывается поверх
 		  изображения новости
-		-->
+	    -->
         <a class="descr-and-gradient-mask">
           Lorem ipsum dolor
         </a>
@@ -403,8 +403,8 @@
 
     ```javascript
     data() {
-	  return {
-		isCatalogWrapperActive: true
+      return {
+	    isCatalogWrapperActive: true
 	  }
     }  
     ```
@@ -419,6 +419,6 @@
   
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3OTI1NDUyOSwtMTczMDQwOTI2MCw1ND
-A3NDcxOTVdfQ==
+eyJoaXN0b3J5IjpbLTE0MDgxMTU2MDksLTE3MzA0MDkyNjAsNT
+QwNzQ3MTk1XX0=
 -->
