@@ -348,6 +348,7 @@
     Или, если у нее имеются геттеры и сеттеры, имя должно обозначать действие
 
     * Здесь можно задать количество покупаемого товара с помощью клавиатуры
+ 
       ```html
       <input
         v-model.number="changeSumByTyping"
@@ -418,6 +419,6 @@
   
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5ODM1MjE0MywtMTczMDQwOTI2MCw1ND
+eyJoaXN0b3J5IjpbLTM3OTI1NDUyOSwtMTczMDQwOTI2MCw1ND
 A3NDcxOTVdfQ==
 -->
