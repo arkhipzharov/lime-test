@@ -1,4 +1,4 @@
-> Написание текста для этого файла в процессе. Он включен в репозиторий для того, чтобы дать приблизительное представление о том, как будут выглядеть конвенции именования в дальнейшем
+> Пока что сюда включены только основные правила именования
 ## Именование классов
 1. Добавляйте постфикс с описанием типа элемента, в зависимости от его тэга и содержимого
     ```html
@@ -425,6 +425,6 @@
   
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTIzNzIxNTIsLTE2MDQxODQ5MCwtMT
-MwNjg5NjI0MSwtMTczMDQwOTI2MCw1NDA3NDcxOTVdfQ==
+eyJoaXN0b3J5IjpbLTg4NDE5ODQwOCwtMTYwNDE4NDkwLC0xMz
+A2ODk2MjQxLC0xNzMwNDA5MjYwLDU0MDc0NzE5NV19
 -->
