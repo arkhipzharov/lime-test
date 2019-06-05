@@ -131,6 +131,7 @@ export default {
 .show-more-items-btn {
   @include vhMedia(2.5vh, margin-top);
   @include vhMedia(1.8vh 0 2vh, padding);
+  cursor: pointer;
   display: block;
   width: 100%;
   background-color: $block-back-col;
