@@ -18,7 +18,7 @@
 - Vue Router
 ## 💡 Технологические решения, подходы и методологии, используемые в проекте
 -	Mobile first
--	Responsive design
+-	Responsive web design
 -	Sass guidelines
 -	SMACSS
 -	SPA
@@ -32,7 +32,7 @@
 ## 🤝 Ваш вклад в проект
 Если вы хотите каким-либо образом посодействовать развитию проекта напишите мне на почту: `arkhipzharov627@gmail.com` с вашим предложением, я полностью открыт для сотрудничества и просто общения
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MTM5OTgyNywxODAxODIxMzYyLDIxND
-Y5NzcwOTQsLTEyNjQ1NTI2MDMsLTQwOTcxMDc5NSwtMTI2NDU1
-MjYwMywtMTIzMzczMjU0NSwtNTcwMjgzOTgzXX0=
+eyJoaXN0b3J5IjpbNDM3MTg3ODA3LDEyNzEzOTk4MjcsMjE0Nj
+k3NzA5NCwtMTI2NDU1MjYwMywtNDA5NzEwNzk1LC0xMjY0NTUy
+NjAzLC0xMjMzNzMyNTQ1LC01NzAyODM5ODNdfQ==
 -->
