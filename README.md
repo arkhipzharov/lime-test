@@ -12,6 +12,7 @@
 - Fetch API
 - ESLint
 - webpack
+- Babel
 - Git
 - Vue.js
 - Vue Router
@@ -31,7 +32,7 @@
 ## 🤝 Ваш вклад в проект
 Если вы хотите каким-либо образом посодействовать развитию проекта напишите мне на почту: `arkhipzharov627@gmail.com` с вашим предложением, я полностью открыт для сотрудничества и просто общения
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwMTgyMTM2MiwyMTQ2OTc3MDk0LC0xMj
-Y0NTUyNjAzLC00MDk3MTA3OTUsLTEyNjQ1NTI2MDMsLTEyMzM3
-MzI1NDUsLTU3MDI4Mzk4M119
+eyJoaXN0b3J5IjpbMTI3MTM5OTgyNywxODAxODIxMzYyLDIxND
+Y5NzcwOTQsLTEyNjQ1NTI2MDMsLTQwOTcxMDc5NSwtMTI2NDU1
+MjYwMywtMTIzMzczMjU0NSwtNTcwMjgzOTgzXX0=
 -->
