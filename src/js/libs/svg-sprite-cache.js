@@ -2,7 +2,7 @@
 ;(function(window, document){
     'use strict';
     var file     = 'sprite.svg',
-        revision = 3.2;
+        revision = 3.21;
     if(!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
         return true;
  
