@@ -128,7 +128,7 @@ export default {
   background-color: $block-back-col;
 
   @media (min-width: $media-tablet) {
-    @include vh(0 3vh 0 2vh, margin);
+    @include vh(0 0 0 2vh, margin);
     width: auto;
   }
 

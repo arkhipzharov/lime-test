@@ -51,11 +51,9 @@ export default {
     border-radius: 5px;
   }
 
-  &:nth-child(3) {
-    margin-right: 1;
-  }
-
   &:last-child {
+    margin: 0;
+
     @media (min-width: $media-pc) {
       display: none;
     }
