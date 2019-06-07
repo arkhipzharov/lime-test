@@ -43,7 +43,6 @@ export default {
   },
   mounted() {
     this.body = document.querySelector('body');
-    // popup
     this.$evBus.$on('close-search-overlay', () => {
       this.isSearchElActive = false;
     });

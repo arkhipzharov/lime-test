@@ -215,9 +215,8 @@ export default {
         this.togglePageScrollingPossibility();
       }
     },
-    // wrapper
-    resetSidebarScrollPosition(sidebarCont) {
-      sidebarCont.scrollTop = 0;
+    resetSidebarScrollPosition(sidebarWrapper) {
+      sidebarWrapper.scrollTop = 0;
     },
     togglePageScrollingPossibility() {
       this.body.classList.toggle('noscroll');
