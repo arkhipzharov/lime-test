@@ -104,7 +104,7 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.css',
+      filename: 'style.[hash].css',
     }),
       // JSON файлы статичные
     new CopyPlugin([
