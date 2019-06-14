@@ -111,6 +111,19 @@
       "ignoreComments": true
     }],
     /*
+      const maxPageScrollOffsetToComfortablyComeBackToTopByManualScrolling
+        = pageHeight * 4;
+      if (
+        pageScrollOffset
+        > maxPageScrollOffsetToComfortablyComeBackToTopByManualScrolling
+      ) {
+        ...
+      }
+      Говорил, что операторы '=' и '>' не должны быть на новой строке. Если
+      укоротить имена переменных, то код не будет таким понятным
+    */
+    "operator-linebreak": "off",
+    /*
       imgUrlInSrcset(name, ext) {
         return require(`./img/${name}.${ext}`);
       },
