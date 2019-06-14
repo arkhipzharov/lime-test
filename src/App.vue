@@ -1,7 +1,7 @@
 <template>
 
 <div class="app">
-  <TheBackToTopBtn />
+  <TheComeBackToTopBtn />
   <TheHeader />
   <router-view />
   <TheFooter />
@@ -11,13 +11,13 @@
 <script>
 import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
-import TheBackToTopBtn from './components/TheBackToTopBtn.vue';
+import TheComeBackToTopBtn from './components/TheComeBackToTopBtn.vue';
 
 export default {
   components: {
     TheHeader,
     TheFooter,
-    TheBackToTopBtn,
+    TheComeBackToTopBtn,
   },
 };
 

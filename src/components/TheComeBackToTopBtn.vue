@@ -14,9 +14,12 @@ export default {
   data() {
     return {
       isComeBackToTopBtnVisible: false,
+      pageScrollOffset: 0,
+      pageHeight: 0,
     };
   },
   mounted() {
+    this.pageHeight = document.documentElement.clientHeight;
     window.addEventListener(
       'scroll',
       this.toggleComeBackToTopBtnVisibilityDependingOnPageScrollOffset,
@@ -24,12 +27,11 @@ export default {
   },
   methods: {
     toggleComeBackToTopBtnVisibilityDependingOnPageScrollOffset() {
-      const pageScrollOffset = window.pageYOffset;
-      const pageHeight = document.documentElement.clientHeight;
+      this.pageScrollOffset = window.pageYOffset;
       const maxPageScrollOffsetToComfortablyComeBackToTopByManualScrolling
-        = pageHeight * 4;
+        = this.pageHeight * 4;
       if (
-        pageScrollOffset
+        this.pageScrollOffset
         > maxPageScrollOffsetToComfortablyComeBackToTopByManualScrolling
       ) {
         this.isComeBackToTopBtnVisible = true;
@@ -37,9 +39,9 @@ export default {
         this.isComeBackToTopBtnVisible = false;
       }
     },
-    async comeBackToTop() {
-      if (window.pageYOffset > 0) {
-        window.scrollBy(0, -70);
+    comeBackToTop() {
+      if (this.pageScrollOffset > 0) {
+        window.scrollBy(0, -(this.pageHeight / 2));
         setTimeout(this.comeBackToTop, 0);
       }
     },
@@ -50,8 +52,8 @@ export default {
 <style scoped lang="scss">
 
 .come-back-to-top-btn {
-  @include vhMedia(7.5vh, width);
-  @include vhMedia(7.5vh, height);
+  @include vhMedia(8vh, width);
+  @include vhMedia(8vh, height);
   @include vhMedia(3vh, right);
   @include vhMedia(3vh, bottom);
   cursor: pointer;
