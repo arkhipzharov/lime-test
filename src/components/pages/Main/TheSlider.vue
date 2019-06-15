@@ -32,7 +32,7 @@
 </template>
 <script>
 
-import RptSliderBanner from './RptSliderBanner.vue';
+import RptSliderBanner from './RptSliderBanner';
 
 export default {
   components: {

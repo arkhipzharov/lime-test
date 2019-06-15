@@ -9,15 +9,15 @@
 
 </template>
 <script>
-import TheHeader from './components/TheHeader.vue';
-import TheFooter from './components/TheFooter.vue';
-import TheComeBackToTopBtn from './components/TheComeBackToTopBtn.vue';
+import TheComeBackToTopBtn from './TheComeBackToTopBtn';
+import TheHeader from './TheHeader';
+import TheFooter from './TheFooter';
 
 export default {
   components: {
+    TheComeBackToTopBtn,
     TheHeader,
     TheFooter,
-    TheComeBackToTopBtn,
   },
 };
 

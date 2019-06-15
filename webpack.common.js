@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
@@ -10,6 +11,10 @@ module.exports = {
     filename: 'main.[hash].js',
   },
   resolve: {
+    extensions: ['.js', '.vue', '.scss'],
+    plugins: [
+      new DirectoryNamedWebpackPlugin(true),
+    ],
     alias: {
       // Для работоспособности v-runtime-template
       vue$: 'vue/dist/vue.common',

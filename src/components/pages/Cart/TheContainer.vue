@@ -7,7 +7,7 @@
 </template>
 <script>
 
-import TheContainer from '@/components/TheContainer.vue';
+import TheContainer from '@/components/TheContainer';
 
 export default {
   components: {
@@ -29,7 +29,7 @@ export default {
       } else if (isCartEmpty === true) {
         asyncSFCNameToImport = 'TheCartEmpty';
       }
-      return () => import(`./${asyncSFCNameToImport}.vue`);
+      return () => import(`./${asyncSFCNameToImport}`);
     },
   },
   mounted() {

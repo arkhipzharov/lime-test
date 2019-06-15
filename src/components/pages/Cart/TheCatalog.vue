@@ -5,7 +5,7 @@
 </template>
 <script>
 
-import TheCatalog from '@/components/TheCatalog.vue';
+import TheCatalog from '@/components/TheCatalog';
 
 export default {
   components: {

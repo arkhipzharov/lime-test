@@ -96,8 +96,8 @@
 </template>
 <script>
 
-import TheSearch from './TheSearch.vue';
-import TheMenu from './TheMenu.vue';
+import TheSearch from './TheSearch';
+import TheMenu from './TheMenu';
 
 export default {
   components: {

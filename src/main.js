@@ -3,10 +3,10 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import './js/libs/svg-sprite-cache';
-import './scss/base/base.scss';
+import './scss/base/base';
 import Vue from 'vue';
 import router from './router';
-import App from './App.vue';
+import App from './components/App';
 import './globals';
 import vhFix from './js/startup/vh-fix';
 

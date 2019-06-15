@@ -17,7 +17,7 @@
 </template>
 <script>
 
-import RptNewsItem from './RptNewsItem.vue';
+import RptNewsItem from './RptNewsItem';
 
 export default {
   components: {

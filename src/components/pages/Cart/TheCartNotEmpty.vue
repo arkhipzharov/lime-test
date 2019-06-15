@@ -8,8 +8,8 @@
 </template>
 <script>
 
-import TheCartItems from './TheCartItems.vue';
-import TheTotal from './TheTotal.vue';
+import TheCartItems from './TheCartItems';
+import TheTotal from './TheTotal';
 
 export default {
   components: {

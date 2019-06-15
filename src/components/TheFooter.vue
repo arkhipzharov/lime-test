@@ -60,7 +60,7 @@
 
 </template>
 <script>
-import RptFooterNestedBlock from './RptFooterNestedBlock.vue';
+import RptFooterNestedBlock from './RptFooterNestedBlock';
 
 export default {
   components: {

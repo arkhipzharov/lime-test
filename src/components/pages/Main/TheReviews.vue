@@ -17,7 +17,7 @@
 </template>
 <script>
 
-import RptReview from './RptReview.vue';
+import RptReview from './RptReview';
 
 export default {
   components: {

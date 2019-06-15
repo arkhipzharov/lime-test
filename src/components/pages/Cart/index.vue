@@ -5,7 +5,7 @@
 </template>
 <script>
 
-import TheContainer from './TheContainer.vue';
+import TheContainer from './TheContainer';
 
 export default {
   components: {

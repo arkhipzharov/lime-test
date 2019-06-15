@@ -2,10 +2,10 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Main from './components/pages/Main/index.vue';
-import Cart from './components/pages/Cart/index.vue';
-import TheCatalog from './components/TheCatalog.vue';
-import TheCatalogCart from './components/pages/Cart/TheCatalog.vue';
+import Main from './components/pages/Main';
+import Cart from './components/pages/Cart';
+import TheCatalog from './components/TheCatalog';
+import TheCatalogCart from './components/pages/Cart/TheCatalog';
 
 Vue.use(VueRouter);
 

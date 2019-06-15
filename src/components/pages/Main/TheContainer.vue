@@ -12,13 +12,13 @@
 </template>
 <script>
 
-import TheContainer from '@/components/TheContainer.vue';
-import TheShowCatalogBtn from './TheShowCatalogBtn.vue';
-import TheSlider from './TheSlider.vue';
-import TheItems from './TheItems.vue';
-import TheActions from './TheActions.vue';
-import TheNews from './TheNews.vue';
-import TheReviews from './TheReviews.vue';
+import TheContainer from '@/components/TheContainer';
+import TheShowCatalogBtn from './TheShowCatalogBtn';
+import TheSlider from './TheSlider';
+import TheItems from './TheItems';
+import TheActions from './TheActions';
+import TheNews from './TheNews';
+import TheReviews from './TheReviews';
 
 export default {
   components: {

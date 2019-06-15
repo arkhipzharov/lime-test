@@ -17,7 +17,7 @@
 </template>
 <script>
 
-import RptAction from './RptAction.vue';
+import RptAction from './RptAction';
 
 export default {
   components: {

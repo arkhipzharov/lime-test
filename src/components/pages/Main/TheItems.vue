@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     RptItem() {
-      if (this.itemsData) return () => import('./RptItem.vue');
+      if (this.itemsData) return () => import('./RptItem');
     },
   },
   async created() {

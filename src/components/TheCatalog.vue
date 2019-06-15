@@ -9,7 +9,7 @@
 </template>
 <script>
 
-import RptCatalogItem from './RptCatalogItem.vue';
+import RptCatalogItem from './RptCatalogItem';
 
 export default {
   components: {

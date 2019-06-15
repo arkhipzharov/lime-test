@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     RptCartItem() {
-      if (this.cartItemsData) return () => import('./RptCartItem.vue');
+      if (this.cartItemsData) return () => import('./RptCartItem');
     },
   },
   async mounted() {
